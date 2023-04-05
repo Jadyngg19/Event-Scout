@@ -32,6 +32,12 @@ async function initMap() {
     const input = document.querySelector("input[type=text]");
     const address = input.value;
 
+    map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 8,
+      center: position,
+      mapTypeControl: false,
+    });
+
     geocode({ address })
       .then((results) => console.log(results))
       .catch((error) => console.log(error));
