@@ -28,7 +28,7 @@ $(document).ready(() => {
               let priceHtml = "<p>No pricing information available.</p>";
               if (event.priceRanges && event.priceRanges.length > 0) {
                 const priceRange = event.priceRanges[0];
-                priceHtml = `<a href="${event.url}" target="_blank" class="event-price">Price: ${priceRange.min} - ${priceRange.max} ${priceRange.currency} (${priceRange.type})</a>`;
+                priceHtml = `<a href="${event.url}" target="_blank" class="event-price">Price:  ${priceRange.max} (${priceRange.currency})</a>`;
               }
               return `
                 <h2 class="event-name">${event.name}</h2>
