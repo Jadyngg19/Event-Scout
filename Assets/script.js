@@ -1,9 +1,13 @@
-//As a user, I want to be able to filter the pricing and search distances to my liking.- Shahnaz
+const priceRangeInput = document.querySelector('#price-range');
+const distanceRangeInput = document.querySelector('#distance-range');
 
-var events = [10,12,18,35,40];
-  var under25 = events.filter(function(event) {
-    return event > 25;
-  });
+priceRangeInput.addEventListener('input', filterSearchResults);
+distanceRangeInput.addEventListener('input', filterSearchResults);
+
+function filterSearchResults() {
+  const priceRangeValue = priceRangeInput.value;
+  const distanceRangeValue = distanceRangeInput.value;
   
-  console.log(under25);
-  //
+  // Use the current values to filter and display search results
+  // ...
+}
