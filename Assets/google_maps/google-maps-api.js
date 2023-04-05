@@ -5,25 +5,25 @@ let geocoder;
 
 
 async function initMap() {
-  // The location of Uluru
-  const position = { lat: -25.344, lng: 131.031 };
+  // The location of the central US
+  const position = { lat: 38.000, lng: -97.000 };
   // Request needed libraries.
   //@ts-ignore
   const { Map } = await google.maps.importLibrary("maps");
 
-  // The map, centered at Uluru
+  // The map, centered on contiguous US
   map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 8,
+    zoom: 4,
     center: position,
     mapTypeControl: false,
   });
   geocoder = new google.maps.Geocoder();
 
-  // The marker, positioned at Uluru
+  // The marker, positioned at the center of the US
   marker = new google.maps.Marker({
     map: map,
     position: position,
-    title: "Uluru",
+    title: "United States",
   });
 
   // Add event listener to search button
