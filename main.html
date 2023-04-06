@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="nouislider/nouislider.css" rel="stylesheet">
+  <link href="Assets/mainstyle.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">Event Scout</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+
+      </ul>
+    </div>
+  </nav>
+  <fieldset class="filters">
+    <legend>
+
+    </legend>
+    <div id="eventfilter" class="input-field row-eventfilter col s3 m3 l3 xl3">
+      <select multiple>
+        <option value="" disabled selected>Filter event type</option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+      </select>
+      <label></label>
+    </div>
+    <div>
+      <div>
+        <p class="pricename">Price Filter</p>
+        
+      </div>
+      <div>
+        <p class="range-field">
+          <input type="range" id="test5" min="0" max="100" />
+        </p>
+        <p class="range-field">
+          <input type="range" id="test6" min="0" max="100" />
+        </p>
+      </div>
+    </div>
+     
+
+    <div id="locationfilter">
+      <div class="col s12">
+        <div class="row">
+          <div class="input-field col ">
+            <i class="material-icons prefix">add_location</i>
+            <input id="icon_prefix" type="text" class="validate">
+            <label for="icon_prefix">Zip Code</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </fieldset>
+
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        <a class="grey-text text-lighten-4 right">© 2023EventScout</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+  <script src="nouislider/nouislider.js"></script>
+  <script type="text/javascript" src="wNumb/wNumb.js"></script>
+  <script type="text/javascript" src="Assets/mainscript.js"></script>
+
+
+</body>
+
+</html>
