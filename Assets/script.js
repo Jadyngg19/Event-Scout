@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const API_KEY = "yQcZrCeti000GPZSD0YCrR0I8tGm3HfK";
 const API_URL = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${API_KEY}&locale=*`;
 
@@ -62,3 +63,18 @@ console.log("type: ", type);
     });
   });
 });
+=======
+const priceRangeInput = document.querySelector('#price-range');
+const distanceRangeInput = document.querySelector('#distance-range');
+
+priceRangeInput.addEventListener('input', filterSearchResults);
+distanceRangeInput.addEventListener('input', filterSearchResults);
+
+function filterSearchResults() {
+  const priceRangeValue = priceRangeInput.value;
+  const distanceRangeValue = distanceRangeInput.value;
+  
+  // Use the current values to filter and display search results
+  // ...
+}
+>>>>>>> d2d56f86c7bcf9318cd78ed03cebc3ebe4431650
