@@ -1,12 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Nearby Events</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<link rel="stylesheet" href="./Assets/style.css"/> 
+	<script src="./Assets/script.js"></script>
 </head>
 
 <body>
+<<<<<<< HEAD
+	<h1>Event Scout</h1>
+	<br />
+	<label for="locationInput">Enter your City Name:</label>
+	<input type="text" id="locationInput">
+	<button id="searchButton">Search</button>
+
+	<br /> 
+	<br /> 
+
+	<div class="options">
+		<label for="radiusInput">Radius:</label>
+		<select id="radiusInput">
+			<option value="1">1 km</option>
+			<option value="5">5 km</option>
+			<option value="10" selected>10 km</option>
+			<option value="25">25 km</option>
+			<option value="50">50 km</option>
+			<option value="100">100 km</option>
+		</select>
+
+		<br /> 
+		<br /> 
+
+		<label for="typeInput">Type:</label>
+		<select id="typeInput">
+			<option value="">All</option>
+			<option value="concert">Concert</option>
+			<option value="sports">Sports</option>
+			<option value="drama">Drama</option>
+			<option value="comedy">Comedy</option>
+		</select>
+	</div>
+	
+	<div id="events"></div> 
+  </body>
+</html>
+=======
   <form>
     <label for="price-range">Price Range:</label>
     <input type="range" id="price-range" name="price-range" min="0" max="1000" value="500">
@@ -16,3 +55,4 @@
   </form>
 </body>
 </html>
+>>>>>>> d2d56f86c7bcf9318cd78ed03cebc3ebe4431650
