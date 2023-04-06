@@ -5,6 +5,9 @@ $(document).ready(() => {
   let radius = $("#radiusInput").val();
 	let type = $("#typeInput").val();
 
+console.log("radius: ", radius);
+console.log("type: ", type);
+
   $("#searchButton").click(() => {
     const userLocation = $("#locationInput").val();
 
