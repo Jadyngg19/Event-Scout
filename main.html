@@ -29,22 +29,33 @@
     <legend>
 
     </legend>
-    
+
     <section class="searchBar">
       <input type="text" placeholder="Search..">
       <input type="button" value="Geocode" id="searchButton">
-  </section>
+    </section>
+    <div class="options">
+      <label for="radiusInput">Radius:</label>
+      <select id="radiusInput">
+        <option value="1">1 km</option>
+        <option value="5">5 km</option>
+        <option value="10" selected>10 km</option>
+        <option value="25">25 km</option>
+        <option value="50">50 km</option>
+        <option value="100">100 km</option>
+      </select>
 
-		<label for="typeInput">Type:</label>
-		<select id="typeInput">
-			<option value="">All</option>
-			<option value="concert">Concert</option>
-			<option value="sports">Sports</option>
-			<option value="drama">Drama</option>
-			<option value="comedy">Comedy</option>
-		</select>
 
-	</div>
+    <label for="typeInput">Type:</label>
+    <select id="typeInput">
+      <option value="">All</option>
+      <option value="concert">Concert</option>
+      <option value="sports">Sports</option>
+      <option value="drama">Drama</option>
+      <option value="comedy">Comedy</option>
+    </select>
+
+    </div>
     <div>
       <div>
         <p class="pricename">Price Filter</p>
@@ -86,7 +97,8 @@
   <script src="nouislider/nouislider.js"></script>
   <script type="text/javascript" src="wNumb/wNumb.js"></script>
   <script type="text/javascript" src="Assets/mainscript.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWo8cIlxOpjnqqzWE9-T3UbO1vETlusWI&callback=initMap" async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWo8cIlxOpjnqqzWE9-T3UbO1vETlusWI&callback=initMap"
+    async defer></script>
 
 
 
