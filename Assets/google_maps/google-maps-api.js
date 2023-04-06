@@ -1,5 +1,3 @@
-
-
 // Initialize and add the map
 let map;
 let marker;
@@ -7,7 +5,7 @@ let geocoder;
 
 async function initMap() {
   // Request needed libraries.
-  //@ts-ignore
+
   const { Map } = await google.maps.importLibrary("maps");
 
   // The map, centered on the user's current location
