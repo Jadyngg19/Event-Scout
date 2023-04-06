@@ -8,7 +8,11 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="nouislider/nouislider.css" rel="stylesheet">
   <link href="Assets/mainstyle.css" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="/favicon.ico" type="image/x-icon" rel="icon" />
+
+  <!-- Map Related -->
+  <link rel="stylesheet" href="./Assets/google_maps/mapTester.css" />
+  <script type="module" src="./Assets/google_maps/google-maps-api.js"></script>
 
 </head>
 
@@ -37,7 +41,7 @@
     <div>
       <div>
         <p class="pricename">Price Filter</p>
-        
+
       </div>
       <div>
         <p class="range-field">
@@ -48,7 +52,7 @@
         </p>
       </div>
     </div>
-     
+
 
     <div id="locationfilter">
       <div class="col s12">
@@ -57,6 +61,7 @@
             <i class="material-icons prefix">add_location</i>
             <input id="icon_prefix" type="text" class="validate">
             <label for="icon_prefix">Zip Code</label>
+            <input type="button" value="Search" id="searchButton">
           </div>
         </div>
       </div>
@@ -64,6 +69,9 @@
 
   </fieldset>
 
+  <!--include title attribute, otherwise it's less useful-->
+  <!--The div element for the map -->
+  <div id="map"></div>
 
   <footer class="page-footer">
     <div class="container">
@@ -77,11 +85,86 @@
     </div>
   </footer>
 
+
+  <!--Associated Script for the Map Element; code provided by google maps API, then restructured and commented
+         by Will Riffe-->
+         <script>
+          ((g) => {
+            // Variables for various components of the script
+            var h,
+              a,
+              k,
+              p = "The Google Maps JavaScript API",
+              c = "google",
+              l = "importLibrary",
+              q = "__ib__",
+              m = document,
+              b = window;
+      
+            // Set up the google object if it doesn't already exist
+            b = b[c] || (b[c] = {});
+            var d = b.maps || (b.maps = {});
+      
+            // Set up a Set to keep track of imported libraries
+            var r = new Set(),
+      
+              // Create a new instance of URLSearchParams
+              e = new URLSearchParams(),
+      
+              // Create a function that returns a promise
+              u = () =>
+                h ||
+                (h = new Promise(async (f, n) => {
+                  // Create a new script element
+                  await (a = m.createElement("script"));
+      
+                  // Add the libraries to the URLSearchParams object
+                  e.set("libraries", [...r] + "");
+      
+                  // Add any additional options to the URLSearchParams object
+                  for (k in g)
+                    e.set(
+                      k.replace(/[A-Z]/g, (t) => "_" + t[0].toLowerCase()),
+                      g[k]
+                    );
+      
+                  // Set the callback function for the Maps API
+                  e.set("callback", c + ".maps." + q);
+      
+                  // Set the source of the script element to the URL created from the URLSearchParams object
+                  a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+      
+                  // Set the callback function for the Maps API
+                  d[q] = f;
+      
+                  // Set an error handler in case the Maps API can't be loaded
+                  a.onerror = () => (h = n(Error(p + " could not load.")));
+      
+                  // Set the nonce attribute of the script element if it exists
+                  a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+      
+                  // Append the script element to the document head
+                  m.head.append(a);
+                }));
+      
+            // Check if the Maps API has already been loaded, and if not, load it
+            d[l]
+              ? console.warn(p + " only loads once. Ignoring:", g)
+              : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
+          })({
+            // The object containing the API key and version
+            key: "AIzaSyCWo8cIlxOpjnqqzWE9-T3UbO1vETlusWI",
+            v: "weekly",
+          });
+        </script>
+      
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
   <script src="nouislider/nouislider.js"></script>
   <script type="text/javascript" src="wNumb/wNumb.js"></script>
   <script type="text/javascript" src="Assets/mainscript.js"></script>
+
+
 
 
 </body>
