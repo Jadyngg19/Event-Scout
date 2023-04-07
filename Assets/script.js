@@ -63,6 +63,7 @@ console.log("type: ", type);
   });
 });
 
+//added for filter
 const priceRangeInput = document.querySelector('#price-range');
 const distanceRangeInput = document.querySelector('#distance-range');
 
