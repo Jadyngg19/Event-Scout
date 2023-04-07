@@ -29,3 +29,18 @@ div.test-slider{
 p.pricename{
     display: flex;
 }
+div.events{
+    height:100px;
+    width:140px;
+    overflow:auto;
+    border:8px solid yellowgreen;
+    padding:2%
+}
+div.map{
+    height:100px;
+    width:140px;
+    overflow:auto;
+    border:8px solid yellowgreen;
+    padding:2%
+}
+

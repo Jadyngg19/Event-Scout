@@ -43,6 +43,7 @@ console.log("type: ", type);
                 <br />
               `;
             }).join("");
+            console.log(eventsHtml)
             $("#events").html(eventsHtml);
           }
         },
