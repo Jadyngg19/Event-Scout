@@ -63,7 +63,7 @@ console.log("type: ", type);
   });
 });
 
-const priceRangeInput = document.querySelector('#test5');
+const priceRangeInput = document.querySelector('#price-range');
 const distanceRangeInput = document.querySelector('#distance-range');
 
 priceRangeInput.addEventListener('input', filterSearchResults);
