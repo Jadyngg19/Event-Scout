@@ -1,12 +1,13 @@
+
 // Initialize and add the map
 let map;
 let marker;
 let geocoder;
 
-async function initMap() {
+function initMap() {
   // Request needed libraries.
 
-  const { Map } = await google.maps.importLibrary("maps");
+ // const { Map } = await google.maps.importLibrary("maps");
 
   // The map, centered on the user's current location
   map = new google.maps.Map(document.getElementById("map"), {
@@ -80,16 +81,18 @@ function handleLocationError(browserHasGeolocation, pos) {
   // Center the map on the contiguous US
   map.setCenter({ lat: 38.000, lng: -97.000 });
 }
-
+//function pins on map
 window.initMap = initMap;
-
+//Look into maybe moving the marker instead of recreating the map
 // Add event listener to search button
 const searchButton = document.getElementById("searchButton");
 searchButton.addEventListener("click", () => {
   const input = document.querySelector("input[type=text]");
   const address = input.value;
+  let type = ''; // add initialization for type variable
+ // let radius = ''; // add initialization for radius variable
 
-  map = new google.maps.Map(document.getElementById("map"), {
+ map = new google.maps.Map(document.getElementById("map"), {
     zoom: 6,
     mapTypeControl: false,
   });
@@ -97,7 +100,9 @@ searchButton.addEventListener("click", () => {
   geocode({ address })
     .then((results) => console.log(results))
     .catch((error) => console.log(error));
+
 });
+
 
 function geocode(request) {
   return geocoder
@@ -115,4 +120,4 @@ function geocode(request) {
     });
 }
 
-initMap();
+//initMap();

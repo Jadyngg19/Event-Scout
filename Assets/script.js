@@ -1,6 +1,7 @@
 const API_KEY = "yQcZrCeti000GPZSD0YCrR0I8tGm3HfK";
 const API_URL = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${API_KEY}&locale=*`;
 
+// Callback function to set radius and type variables based on input values
 $(document).ready(() => {
   let radius = $("#radiusInput").val();
 	let type = $("#typeInput").val();
@@ -10,7 +11,6 @@ console.log("type: ", type);
 
   $("#searchButton").click(() => {
     const userLocation = $("#locationInput").val();
-
     if (userLocation) {
       $.ajax({
         url: API_URL,
@@ -22,6 +22,8 @@ console.log("type: ", type);
           "city": userLocation,
           "classificationName": type
         },
+               //function to pass the events array somewhere below
+
         success: (response) => {
           const events = response._embedded.events;
           if (events.length === 0) {
