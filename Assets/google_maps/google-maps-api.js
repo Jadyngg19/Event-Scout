@@ -78,7 +78,7 @@ function handleLocationError(browserHasGeolocation, pos) {
       ? "Error: The Geolocation service failed."
       : "Error: Your browser doesn't support geolocation."
   );
-  // Center the map on the contiguous US
+  // Center the map on the contiguous US if geolocation doesn't work
   map.setCenter({ lat: 38.000, lng: -97.000 });
 }
 //function pins on map
