@@ -25,14 +25,9 @@ $(document).ready(() => {
         },
         success: (response) => {
           events = response._embedded.events;
-          // Hopefully adds Markers to the Map when the data is called?
-          addMarkersToMap(events);
-
-          // Convert the events to a JSON string
-          const jsonEvents = JSON.stringify(events);
-
-          // Save the JSON string to local storage
-          localStorage.setItem("events", jsonEvents);
+          addMarkersToMap(events); //calls function from google-maps-api.js
+          const jsonEvents = JSON.stringify(events); // Convert the events to a JSON string
+          localStorage.setItem("events", jsonEvents); // Save the JSON string to local storage
 
 
           if (events.length === 0) {
