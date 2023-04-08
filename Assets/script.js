@@ -1,16 +1,16 @@
 const API_KEY = "yQcZrCeti000GPZSD0YCrR0I8tGm3HfK";
 const API_URL = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${API_KEY}&locale=*`;
 
-// Callback function to set radius and type variables based on input values
 $(document).ready(() => {
   let radius = $("#radiusInput").val();
-	let type = $("#typeInput").val();
+  let type = $("#typeInput").val();
 
-console.log("radius: ", radius);
-console.log("type: ", type);
+  console.log("radius: ", radius);
+  console.log("type: ", type);
 
   $("#searchButton").click(() => {
     const userLocation = $("#locationInput").val();
+
     if (userLocation) {
       $.ajax({
         url: API_URL,
@@ -22,10 +22,33 @@ console.log("type: ", type);
           "city": userLocation,
           "classificationName": type
         },
-               //function to pass the events array somewhere below
-
         success: (response) => {
           const events = response._embedded.events;
+
+          // Extract latitude and longitude for each event
+          const locations = events.map((event) => {
+            return { lat: event._embedded.venues[0].location.latitude, lng: event._embedded.venues[0].location.longitude };
+          });
+
+          // Create a marker for each location on the map
+          locations.forEach((location, index) => {
+            const marker = new google.maps.Marker({
+              position: location,
+              map: map,
+              title: `Event ${index + 1}: ${events[index].name}`,
+            });
+          });
+
+          // Convert the events to a JSON string
+          const jsonEvents = JSON.stringify(events);
+
+          // Save the JSON string to local storage
+          localStorage.setItem("events", jsonEvents);
+
+          // Print the JSON string in the console log
+          console.log(jsonEvents);
+
+
           if (events.length === 0) {
             $("#events").html("<p>No events found for the specified location and radius.</p>");
           } else {
@@ -57,10 +80,25 @@ console.log("type: ", type);
       radius = $("#radiusInput").val();
       $("#searchButton").trigger("click");
     });
-    
+
     $("#typeInput").change(() => {
       type = $("#typeInput").val();
       $("#searchButton").trigger("click");
     });
   });
 });
+
+/*
+const priceRangeInput = document.querySelector('#price-range');
+const distanceRangeInput = document.querySelector('#distance-range');
+
+priceRangeInput.addEventListener('input', filterSearchResults);
+distanceRangeInput.addEventListener('input', filterSearchResults);
+
+function filterSearchResults() {
+  const priceRangeValue = priceRangeInput.value;
+  const distanceRangeValue = distanceRangeInput.value;
+  
+  // Use the current values to filter and display search results
+  // ...
+}*/
