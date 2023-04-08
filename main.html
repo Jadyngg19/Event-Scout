@@ -12,7 +12,6 @@
 
   <!-- Map Related -->
   <link rel="stylesheet" href="./Assets/google_maps/mapTester.css" />
-  <script type="module" src="./Assets/google_maps/google-maps-api.js"></script>
 
 </head>
 
@@ -31,6 +30,12 @@
     </legend>
 
     <section class="searchBar">
+
+      <input type="text" id="locationInput" placeholder="Where to?">
+      <input type="button" value="Search" id="searchButton">
+  </section>
+
+
 
       <input type="text" id="locationInput">
       <button type="button" id="searchButton">Search Location</button>
@@ -72,6 +77,7 @@
       </div>
     </div>
 
+
     <div>
       <label for="price-range">Price Range:</label>
       <input type="range" id="price-range" name="price-range" min="0" max="1000" value="500">
@@ -81,17 +87,6 @@
       <label for="distance-range">Search Distance:</label>
       <input type="range" id="distance-range" name="distance-range" min="0" max="50" value="25">
     </div>
-
-    <div>
-      <label for="price-range">Price Range:</label>
-      <input type="range" id="price-range" name="price-range" min="0" max="1000" value="500">
-      <br>
-      </div>
-      <div>
-      <label for="distance-range">Search Distance:</label>
-      <input type="range" id="distance-range" name="distance-range" min="0" max="50" value="25">
-    </div>
-
 
   </fieldset>
   
@@ -124,8 +119,10 @@
   <script src="nouislider/nouislider.js"></script>
   <script type="text/javascript" src="wNumb/wNumb.js"></script>
   <script type="text/javascript" src="Assets/mainscript.js"></script>
-  <script type="text/javascript" src="Assets/script.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWo8cIlxOpjnqqzWE9-T3UbO1vETlusWI&callback=initMap"async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWo8cIlxOpjnqqzWE9-T3UbO1vETlusWI&callback=initMap" async defer></script>
+  <script src="./Assets/google_maps/google-maps-api.js"></script>
+  <script src="./Assets/script.js"></script>
+
 
 </body>
 

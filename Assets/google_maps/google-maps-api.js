@@ -1,12 +1,13 @@
+
 // Initialize and add the map
 let map;
 let marker;
 let geocoder;
 
-async function initMap() {
+function initMap() {
   // Request needed libraries.
 
-  const { Map } = await google.maps.importLibrary("maps");
+  // const { Map } = await google.maps.importLibrary("maps");
 
   // The map, centered on the user's current location
   map = new google.maps.Map(document.getElementById("map"), {
@@ -77,12 +78,12 @@ function handleLocationError(browserHasGeolocation, pos) {
       ? "Error: The Geolocation service failed."
       : "Error: Your browser doesn't support geolocation."
   );
-  // Center the map on the contiguous US
+  // Center the map on the contiguous US if geolocation doesn't work
   map.setCenter({ lat: 38.000, lng: -97.000 });
 }
-
+//function pins on map
 window.initMap = initMap;
-
+//Look into maybe moving the marker instead of recreating the map
 // Add event listener to search button
 const searchButton = document.getElementById("searchButton");
 searchButton.addEventListener("click", () => {
@@ -90,14 +91,41 @@ searchButton.addEventListener("click", () => {
   const address = input.value;
 
   map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 6,
+    zoom: 8,
     mapTypeControl: false,
   });
 
   geocode({ address })
     .then((results) => console.log(results))
     .catch((error) => console.log(error));
+
 });
+
+function addMarkersToMap(events) {
+  // Extract latitude and longitude for each event
+  const locations = events.map((event) => {
+    const latitude = parseFloat(event._embedded.venues[0].location.latitude);
+    const longitude = parseFloat(event._embedded.venues[0].location.longitude);
+    console.log(`latitude: ${latitude}, longitude: ${longitude}`);
+    return {
+      latitude,
+      longitude
+    };
+  });
+
+  // Create a marker for each location on the map
+  locations.forEach((location, index) => {
+    const marker = new google.maps.Marker({
+      position: { lat: location.latitude, lng: location.longitude },
+      map: map,
+      title: `Event ${index + 1}: ${events[index].name}`,
+    });
+  });
+}
+
+
+
+
 
 function geocode(request) {
   return geocoder
@@ -115,4 +143,4 @@ function geocode(request) {
     });
 }
 
-initMap();
+//initMap();
