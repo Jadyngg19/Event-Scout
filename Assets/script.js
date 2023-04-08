@@ -64,6 +64,27 @@ console.log("type: ", type);
   });
 });
 
+// Step 2: Create variables for minimum and maximum prices
+let minPrice = $("#test5").val();
+let maxPrice = $("#test6").val();
+
+// Step 3: Add event listeners to range inputs
+$("#test5").on("input", () => {
+  minPrice = $("#test5").val();
+  refreshEvents();
+});
+
+$("#test6").on("input", () => {
+  maxPrice = $("#test6").val();
+  refreshEvents();
+});
+
+// Helper function to refresh events display
+function refreshEvents() {
+  $("#searchButton").trigger("click");
+}
+
+/*added for filter
 const priceRangeInput = document.querySelector('#price-range');
 const distanceRangeInput = document.querySelector('#distance-range');
 
@@ -74,3 +95,4 @@ function filterSearchResults() {
   const priceRangeValue = priceRangeInput.value;
   const distanceRangeValue = distanceRangeInput.value;
 };
+*/
