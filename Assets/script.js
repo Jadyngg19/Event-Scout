@@ -1,5 +1,6 @@
 const API_KEY = "yQcZrCeti000GPZSD0YCrR0I8tGm3HfK";
 const API_URL = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${API_KEY}&locale=*`;
+let events = [];
 
 $(document).ready(() => {
   let radius = $("#radiusInput").val();
@@ -23,30 +24,15 @@ $(document).ready(() => {
           "classificationName": type
         },
         success: (response) => {
-          const events = response._embedded.events;
-
-          // Extract latitude and longitude for each event
-          const locations = events.map((event) => {
-            return { lat: event._embedded.venues[0].location.latitude, lng: event._embedded.venues[0].location.longitude };
-          });
-
-          // Create a marker for each location on the map
-          locations.forEach((location, index) => {
-            const marker = new google.maps.Marker({
-              position: location,
-              map: map,
-              title: `Event ${index + 1}: ${events[index].name}`,
-            });
-          });
+          events = response._embedded.events;
+          // Hopefully adds Markers to the Map when the data is called?
+          addMarkersToMap(events);
 
           // Convert the events to a JSON string
           const jsonEvents = JSON.stringify(events);
 
           // Save the JSON string to local storage
           localStorage.setItem("events", jsonEvents);
-
-          // Print the JSON string in the console log
-          console.log(jsonEvents);
 
 
           if (events.length === 0) {
