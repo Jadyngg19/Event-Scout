@@ -28,23 +28,18 @@
     <legend>
 
     </legend>
-    
+
     <section class="searchBar">
+
       <input type="text" id="locationInput" placeholder="Where to?">
       <input type="button" value="Search" id="searchButton">
   </section>
 
-		<label for="typeInput">Type:</label>
-		<select id="typeInput">
-			<option value="">All</option>
-			<option value="concert">Concert</option>
-			<option value="sports">Sports</option>
-			<option value="drama">Drama</option>
-			<option value="comedy">Comedy</option>
-		</select>
 
 
-
+      <input type="text" id="locationInput">
+      <button type="button" id="searchButton">Search Location</button>
+    </section>
     <div class="options">
       <label for="radiusInput">Radius:</label>
       <select id="radiusInput">
@@ -57,11 +52,55 @@
       </select>
 
 
+      <label for="typeInput">Type:</label>
+      <select id="typeInput">
+        <option value="">All</option>
+        <option value="concert">Concert</option>
+        <option value="sports">Sports</option>
+        <option value="drama">Drama</option>
+        <option value="comedy">Comedy</option>
+      </select>
+
+    </div>
+    <div>
+      <div>
+        <p class="pricename">Price Filter</p>
+
+      </div>
+      <div>
+        <p class="range-field">
+          <input type="range" id="test5" min="0" max="100" />
+        </p>
+        <p class="range-field">
+          <input type="range" id="test6" min="0" max="100" />
+        </p>
+      </div>
+    </div>
+
+
+    <div>
+      <label for="price-range">Price Range:</label>
+      <input type="range" id="price-range" name="price-range" min="0" max="1000" value="500">
+      <br>
+    </div>
+    <div>
+      <label for="distance-range">Search Distance:</label>
+      <input type="range" id="distance-range" name="distance-range" min="0" max="50" value="25">
+    </div>
+
   </fieldset>
+  
+
+
+
 
   <!--include title attribute, otherwise it's less useful-->
   <!--The div element for the map -->
-  <div id="map"></div>
+  <div class="map" id="map"></div>
+
+  <div class="events" id="events"></div>
+
+
 
   <footer class="page-footer">
     <div class="container">
