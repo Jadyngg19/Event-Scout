@@ -24,20 +24,27 @@ $(document).ready(() => {
           "classificationName": type
         },
         success: (response) => {
-          events = response._embedded.events;
+          console.log(events); 
+          if (response._embedded) {
+            events = response._embedded.events;
+          } else {
+            events = [];
+          }
           addMarkersToMap(events); //calls function from google-maps-api.js
+          
           const jsonEvents = JSON.stringify(events); // Convert the events to a JSON string
-          localStorage.setItem("events", jsonEvents); // Save the JSON string to local storage
-
-
+          localStorage.setItem("events", jsonEvents); // Save the JSON string to local storage 
+          
           if (events.length === 0) {
             $("#events").html("<p>No events found for the specified location and radius.</p>");
           } else {
             const eventsHtml = events.map((event) => {
-              let priceHtml = "<p>No pricing information available.</p>";
-              if (event.priceRanges && event.priceRanges.length > 0) {
+              let priceHtml = "";
+              if (event.priceRanges) {
                 const priceRange = event.priceRanges[0];
                 priceHtml = `<a href="${event.url}" target="_blank" class="event-price">Price:  ${priceRange.max} (${priceRange.currency})</a>`;
+              } else {
+                priceHtml = "<p>No pricing information available.</p>"; //fixed typo in variable name
               }
               return `
                 <h2 class="event-name">${event.name}</h2>
@@ -57,7 +64,9 @@ $(document).ready(() => {
           console.log(error);
         }
       });
-    }
+    } else {
+      $("#events").html("<p>Please enter a location to search for events.</p>");
+    } 
     $("#radiusInput").change(() => {
       radius = $("#radiusInput").val();
       $("#searchButton").trigger("click");
