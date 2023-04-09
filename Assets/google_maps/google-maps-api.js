@@ -11,7 +11,7 @@ function initMap() {
 
   // The map, centered on the user's current location
   map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 4,
+    zoom: 6,
     mapTypeControl: false,
   });
 
@@ -91,7 +91,7 @@ searchButton.addEventListener("click", () => {
   const address = input.value;
 
   map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 8,
+    zoom: 10,
     mapTypeControl: false,
   });
 
