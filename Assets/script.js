@@ -90,7 +90,7 @@ $("#test6").on("input", () => {
 function refreshEvents() {
   $("#searchButton").trigger("click");
 }
-*/
+
 /*added for filter
 
 const priceRangeInput = document.querySelector('#price-range');
