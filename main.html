@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html5 lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -18,7 +18,7 @@
 <body>
   <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo center">Event Scout</a>
+      <a  class="brand-logo center">Event Scout</a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
 
       </ul>
@@ -36,10 +36,6 @@
   </section>
 
 
-
-      <input type="text" id="locationInput">
-      <button type="button" id="searchButton">Search Location</button>
-    </section>
     <div class="options">
       <label for="radiusInput">Radius:</label>
       <select id="radiusInput">
@@ -96,9 +92,12 @@
 
   <!--include title attribute, otherwise it's less useful-->
   <!--The div element for the map -->
-  <div class="map" id="map"></div>
+   <main>
+    <div class="map" id="map" title="googlemap"></div>
 
-  <div class="events" id="events"></div>
+    <div class="events" id="events"></div>
+   </main> 
+    
 
 
 
