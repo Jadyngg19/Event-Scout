@@ -5,9 +5,6 @@ let marker;
 let geocoder;
 
 function initMap() {
-  // Request needed libraries.
-
-  // const { Map } = await google.maps.importLibrary("maps");
 
   // The map, centered on the user's current location
   map = new google.maps.Map(document.getElementById("map"), {
@@ -83,7 +80,7 @@ function handleLocationError(browserHasGeolocation, pos) {
 }
 //function pins on map
 window.initMap = initMap;
-//Look into maybe moving the marker instead of recreating the map
+
 // Add event listener to search button
 const searchButton = document.getElementById("searchButton");
 searchButton.addEventListener("click", () => {
@@ -102,27 +99,33 @@ searchButton.addEventListener("click", () => {
 });
 
 function addMarkersToMap(events) {
+
   // Extract latitude and longitude for each event
   const locations = events.map((event) => {
     const latitude = parseFloat(event._embedded.venues[0].location.latitude);
     const longitude = parseFloat(event._embedded.venues[0].location.longitude);
-    console.log(`latitude: ${latitude}, longitude: ${longitude}`);
     return {
       latitude,
       longitude
     };
   });
 
-  // Create a marker for each location on the map
+  const eventIcon = new google.maps.MarkerImage(
+    '/Assets/map_icon/icons8-ticket-64.png', 
+    new google.maps.Size(64, 64), 
+    new google.maps.Point(0, 0), 
+    new google.maps.Point(32, 64)
+  );
+  // Create a marker for each event location on the map
   locations.forEach((location, index) => {
     const marker = new google.maps.Marker({
       position: { lat: location.latitude, lng: location.longitude },
       map: map,
       title: `Event ${index + 1}: ${events[index].name}`,
+      icon: eventIcon
     });
-  });
-}
-
+  })
+};
 
 
 
@@ -142,5 +145,3 @@ function geocode(request) {
       alert("Geocode was not successful for the following reason: " + e);
     });
 }
-
-//initMap();

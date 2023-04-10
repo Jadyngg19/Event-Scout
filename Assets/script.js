@@ -44,7 +44,7 @@ $(document).ready(() => {
                 const priceRange = event.priceRanges[0];
                 priceHtml = `<a href="${event.url}" target="_blank" class="event-price">Price:  ${priceRange.max} (${priceRange.currency})</a>`;
               } else {
-                priceHtml = "<p>No pricing information available.</p>"; //fixed typo in variable name
+                priceHtml = "<p>No pricing information available.</p>";
               }
               return `
                 <h2 class="event-name">${event.name}</h2>
@@ -56,7 +56,6 @@ $(document).ready(() => {
                 <br />
               `;
             }).join("");
-            console.log(eventsHtml)
             $("#events").html(eventsHtml);
           }
         },
@@ -89,18 +88,18 @@ function debounce(func, delay) {
   }
 }
 
-let minPrice = $("#test5").val();
-let maxPrice = $("#test6").val();
+let minPrice = $("#priceMin").val();
+let maxPrice = $("#priceMax").val();
 
 $("#test5").on("input", debounce(() => {
-  minPrice = $("#test5").val();
+  minPrice = $("#priceMin").val();
   refreshEvents();
-}, 300));
+}, 2000));
 
 $("#test6").on("input", debounce(() => {
-  maxPrice = $("#test6").val();
+  maxPrice = $("#priceMax").val();
   refreshEvents();
-}, 300));
+}, 2000));
 
 // Helper function to refresh events display
 function refreshEvents() {
