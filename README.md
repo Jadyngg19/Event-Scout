@@ -25,10 +25,10 @@ To use Event Scout, follow these steps:
 
 
 
-[Event Scout HomePage](./Assets/Images/Event%20Scout%20Homepage.png)
-[City Search - Events Rendered](./Assets/Images/City%20Search%20-%20Events%20Rendered.png)
-[City Search - No Events Available](./Assets/Images/City%20Search%20-%20No%20Events%20Available.png)
-[Event Type Filter in Effect](./Assets/Images/Event%20Filter%20in%20Use.png)
+![Event Scout HomePage](./Assets/Images/Event%20Scout%20Homepage.png)
+![City Search - Events Rendered](./Assets/Images/City%20Search%20-%20Events%20Rendered.png)
+![City Search - No Events Available](./Assets/Images/City%20Search%20-%20No%20Events%20Available.png)
+![Event Type Filter in Effect](./Assets/Images/Event%20Filter%20in%20Use.png)
 
 
 ## Technologies Used
