@@ -1,7 +1,7 @@
 # Event-Scout
 
 ## Description
-Event Scout is a webapge thatt allows users to search for events in the city of their choice. They can also then filter those results by the pricing of the tickets, the distance the event is from their location, and types of events. Furthermore, users will be able to look at their previous search results if they want to look at multiple cities and then later on go back to one they searched for earlier.
+Event Scout is a webapge that allows users to search for events in the city of their choice. They can also then filter those results by the pricing of the tickets, the distance the event is from their location, and types of events. Furthermore, users will be able to look at their previous search results if they want to look at multiple cities and then later on go back to one they searched for earlier.
 
 Features
 The key features of Event Scout are:
@@ -21,7 +21,6 @@ To use Event Scout, follow these steps:
 2. Enter the name of the city you want to explore in the search bar
 3. Hit the search button to see a list of events in that city
 4. Use the filters to narrow down the results according to your preferences
-5. If you want to revisit your past searches, - NEED TO ADD THIS PART WHEN THEY LAYOUT FOR IT IS DECIDED
 
 ## Technologies Used
 Event Scout was built using modern web technologies inculding HTML, CSS, JavaScript, and JQuery. It also relies on the TicketMaster and Google Maps APIs and the Materialize stlying framework.
