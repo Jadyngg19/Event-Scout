@@ -86,6 +86,7 @@ const searchButton = document.getElementById("searchButton");
 searchButton.addEventListener("click", () => {
   const input = document.querySelector("input[type=text]");
   const address = input.value;
+  localStorage.setItem("search",address)
 
   map = new google.maps.Map(document.getElementById("map"), {
     zoom: 10,
@@ -97,6 +98,7 @@ searchButton.addEventListener("click", () => {
     .catch((error) => console.log(error));
 
 });
+
 
 function addMarkersToMap(events) {
 
