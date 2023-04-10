@@ -23,6 +23,11 @@ To use Event Scout, follow these steps:
 4. Use the filters to narrow down the results according to your preferences
 5. If you want to revisit your past searches, - NEED TO ADD THIS PART WHEN THEY LAYOUT FOR IT IS DECIDED
 
+[Event Scout Homepage](./Assets/Images/Event%20Scout%20Homepage.png)
+[City Search - Events Listed](./Assets/Images/City%20Search%20-%20Events%20Rendered.png)
+[City Search - No Event Information Available](./Assets/Images/City%20Search%20-%20No%20Events%20Available.png)
+[Event Type Filter in Use](./Assets/Images/City%20Search%20-%20No%20Events%20Available.png)
+
 ## Technologies Used
 Event Scout was built using modern web technologies inculding HTML, CSS, JavaScript, and JQuery. It also relies on the TicketMaster and Google Maps APIs and the Materialize stlying framework.
 
