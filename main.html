@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html5 lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -12,14 +12,13 @@
 
   <!-- Map Related -->
   <link rel="stylesheet" href="./Assets/google_maps/mapTester.css" />
-  <script type="module" src="./Assets/google_maps/google-maps-api.js"></script>
 
 </head>
 
 <body>
   <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo center">Event Scout</a>
+      <a  class="brand-logo center">Event Scout</a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
 
       </ul>
@@ -31,9 +30,12 @@
     </legend>
 
     <section class="searchBar">
-      <input type="text" placeholder="Search..">
-      <input type="button" value="Geocode" id="searchButton">
-    </section>
+
+      <input type="text" id="locationInput" placeholder="Where to?">
+      <input type="button" value="Search" id="searchButton">
+  </section>
+
+
     <div class="options">
       <label for="radiusInput">Radius:</label>
       <select id="radiusInput">
@@ -71,32 +73,15 @@
       </div>
     </div>
 
-    <div>
-      <label for="price-range">Price Range:</label>
-      <input type="range" id="price-range" name="price-range" min="0" max="1000" value="500">
-      <br>
-    </div>
-    <div>
-      <label for="distance-range">Search Distance:</label>
-      <input type="range" id="distance-range" name="distance-range" min="0" max="50" value="25">
-    </div>
-
-    <div>
-      <label for="price-range">Price Range:</label>
-      <input type="range" id="price-range" name="price-range" min="0" max="1000" value="500">
-      <br>
-      </div>
-      <div>
-      <label for="distance-range">Search Distance:</label>
-      <input type="range" id="distance-range" name="distance-range" min="0" max="50" value="25">
-    </div>
-
   </fieldset>
-
 
   <!--include title attribute, otherwise it's less useful-->
   <!--The div element for the map -->
-  <div id="map"></div>
+   <main>
+    <div class="map" id="map" title="googlemap"></div>
+
+    <div class="events" id="events"></div>
+   </main> 
 
   <footer class="page-footer">
     <div class="container">
@@ -115,11 +100,9 @@
   <script src="nouislider/nouislider.js"></script>
   <script type="text/javascript" src="wNumb/wNumb.js"></script>
   <script type="text/javascript" src="Assets/mainscript.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWo8cIlxOpjnqqzWE9-T3UbO1vETlusWI&callback=initMap"
-    async defer></script>
-
-
-
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWo8cIlxOpjnqqzWE9-T3UbO1vETlusWI&callback=initMap" async defer></script>
+  <script src="./Assets/google_maps/google-maps-api.js"></script>
+  <script src="./Assets/script.js"></script>
 
 
 </body>
