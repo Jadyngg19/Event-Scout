@@ -1,9 +1,6 @@
 # Event-Scout
 
 ## Description
-
-Event Scout is a webapge that allows users to search for events in the city of their choice. They can also then filter those results by the pricing of the tickets, the distance the event is from their location, and types of events. Furthermore, users will be able to look at their previous search results if they want to look at multiple cities and then later on go back to one they searched for earlier.
-=======
 Event Scout is a webapge thatt allows users to search for events in the city of their choice. They can also then filter those results by the distance the event is from their location and types of events. Furthermore, users will be able to look at their previous search results if they want to look at multiple cities and then later on go back to one they searched for earlier.
 
 
@@ -32,8 +29,6 @@ To use Event Scout, follow these steps:
 [City Search - Events Rendered](./Assets/Images/City%20Search%20-%20Events%20Rendered.png)
 [City Search - No Events Available](./Assets/Images/City%20Search%20-%20No%20Events%20Available.png)
 [Event Type Filter in Effect](./Assets/Images/Event%20Filter%20in%20Use.png)
-
-
 
 
 ## Technologies Used
