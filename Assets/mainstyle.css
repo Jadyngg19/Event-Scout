@@ -44,6 +44,7 @@ div.map.map{
 }
 main{
     display: flex;
+    width:95vw;
 }
 a.brand-logo.center{
     font-size: 50px;

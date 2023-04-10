@@ -44,7 +44,7 @@ $(document).ready(() => {
                 const priceRange = event.priceRanges[0];
                 priceHtml = `<a href="${event.url}" target="_blank" class="event-price">Price:  ${priceRange.max} (${priceRange.currency})</a>`;
               } else {
-                priceHtml = "<p>No pricing information available.</p>"; //fixed typo in variable name
+                priceHtml = "<p>No pricing information available.</p>";
               }
               return `
                 <h2 class="event-name">${event.name}</h2>
@@ -56,7 +56,6 @@ $(document).ready(() => {
                 <br />
               `;
             }).join("");
-            console.log(eventsHtml)
             $("#events").html(eventsHtml);
           }
         },
@@ -79,44 +78,30 @@ $(document).ready(() => {
   });
 });
 
+function debounce(func, delay) {
+  let timer;
+  return function(...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
+  }
+}
 
-// Step 2: Create variables for minimum and maximum prices
-let minPrice = $("#test5").val();
-let maxPrice = $("#test6").val();
+let minPrice = $("#priceMin").val();
+let maxPrice = $("#priceMax").val();
 
-// Step 3: Add event listeners to range inputs
-$("#test5").on("input", () => {
-  minPrice = $("#test5").val();
+$("#test5").on("input", debounce(() => {
+  minPrice = $("#priceMin").val();
   refreshEvents();
-});
+}, 2000));
 
-$("#test6").on("input", () => {
-  maxPrice = $("#test6").val();
+$("#test6").on("input", debounce(() => {
+  maxPrice = $("#priceMax").val();
   refreshEvents();
-});
+}, 2000));
 
 // Helper function to refresh events display
 function refreshEvents() {
   $("#searchButton").trigger("click");
 }
-
-/*added for filter
-
-const priceRangeInput = document.querySelector('#price-range');
-const distanceRangeInput = document.querySelector('#distance-range');
-
-priceRangeInput.addEventListener('input', filterSearchResults);
-distanceRangeInput.addEventListener('input', filterSearchResults);
-
-function filterSearchResults() {
-  const priceRangeValue = priceRangeInput.value;
-  const distanceRangeValue = distanceRangeInput.value;
-
-  
-  // Use the current values to filter and display search results
-  // ...
-}
-
-};
-*/
-
