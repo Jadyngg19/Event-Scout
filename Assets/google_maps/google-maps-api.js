@@ -113,7 +113,7 @@ function addMarkersToMap(events) {
   });
 
   const eventIcon = new google.maps.MarkerImage(
-    '/Assets/map_icon/icons8-ticket-64.png', 
+    './Assets/map_icon/icons8-ticket-64.png', 
     new google.maps.Size(64, 64), 
     new google.maps.Point(0, 0), 
     new google.maps.Point(32, 64)
